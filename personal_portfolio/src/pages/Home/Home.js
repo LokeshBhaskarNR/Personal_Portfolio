@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 import { 
   DownloadOutlined, 
   EyeOutlined, 
-  BulbOutlined,
   CodeOutlined,
-  ChromeOutlined
+  RocketOutlined 
 } from '@ant-design/icons';
 import './Home.scss';
 
 const { Title, Paragraph } = Typography;
 
 const Home = () => {
-  const handleResumeDownload = () => {
-    
+
+    const handleResumeDownload = () => {
+
     const link = document.createElement('a');
     link.href = '/assets/documents/Lokesh_B_Resume.pdf';
     link.download = 'Lokesh_B_Resume.pdf';
@@ -41,11 +41,12 @@ const Home = () => {
                 Full Stack Developer And ML Enthusiast
               </Title>
               <Paragraph className="hero-description">
-                Currently working as a Software Engineer at <a href="https://thoughtclan.com/" target="_blank" rel="noopener noreferrer">ThoughtClan Technologies</a>.
+                I'm currently working as a Software Engineer at <a href="https://thoughtclan.com/" target="_blank" rel="noopener noreferrer">ThoughtClan Technologies</a>.
                 I specialize in building high-quality web applications
                 and exploring the latest in machine learning. 
                 Let's create something amazing together!
               </Paragraph>
+              
               <Space size="large" className="hero-actions">
                 <Button 
                   type="primary" 
@@ -54,23 +55,25 @@ const Home = () => {
                 >
                   <Link to="/projects">View My Work</Link>
                 </Button>
-                
+              </Space>
+              
+              <div className="resume-actions">
                 <Button 
                   size="large" 
                   icon={<DownloadOutlined />}
                   onClick={handleResumeDownload}
-                  className="secondary-btn"
+                  className="secondary-btn resume-download-btn"
+                  block
                 >
                   Download Resume
                 </Button>
-              </Space>
-              
-              <div className="resume-actions" style={{ marginTop: '16px' }}>
+                
                 <Button 
                   type="link" 
                   onClick={handleResumeView}
                   icon={<EyeOutlined />}
                   size="small"
+                  className="view-resume-link"
                 >
                   View Resume Online
                 </Button>
@@ -90,47 +93,46 @@ const Home = () => {
         </Row>
       </section>
 
-    <section className="features-section">
-    <Row gutter={[32, 32]}>
-        <Col xs={24} md={8}>
-        <div className="feature-card">
-            <div className="feature-icon">
-            <CodeOutlined /> 
+      <section className="features-section">
+        <Row gutter={[32, 32]}>
+          <Col xs={24} md={8}>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <CodeOutlined />
+              </div>
+              <Title level={4}>Machine Learning</Title>
+              <Paragraph>
+                Leveraging data-driven techniques to build intelligent
+                systems that solve complex problems.
+              </Paragraph>
             </div>
-            <Title level={4}>Machine Learning</Title>
-            <Paragraph>
-            Building and deploying intelligent models for predictions, 
-            automation, and data-driven decision-making using modern ML frameworks.
-            </Paragraph>
-        </div>
-        </Col>
-        <Col xs={24} md={8}>
-        <div className="feature-card">
-            <div className="feature-icon">
-            <ChromeOutlined /> 
+          </Col>
+          <Col xs={24} md={8}>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <RocketOutlined />
+              </div>
+              <Title level={4}>React Development</Title>
+              <Paragraph>
+                Building dynamic and responsive web applications
+                using React.js and modern front-end technologies.
+              </Paragraph>
             </div>
-            <Title level={4}>React Development</Title>
-            <Paragraph>
-            Designing dynamic, responsive, and scalable front-end 
-            applications with React, optimized for performance and usability.
-            </Paragraph>
-        </div>
-        </Col>
-        <Col xs={24} md={8}>
-        <div className="feature-card">
-            <div className="feature-icon">
-            <BulbOutlined />
+          </Col>
+          <Col xs={24} md={8}>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <EyeOutlined />
+              </div>
+              <Title level={4}>Problem Solving</Title>
+              <Paragraph>
+                Passionate about tackling challenges and finding
+                innovative solutions through code.
+              </Paragraph>
             </div>
-            <Title level={4}>Problem Solving</Title>
-            <Paragraph>
-            Applying analytical thinking and structured approaches 
-            to craft efficient, creative solutions for complex challenges.
-            </Paragraph>
-        </div>
-        </Col>
-    </Row>
-    </section>
-
+          </Col>
+        </Row>
+      </section>
 
       <section className="cta-section">
         <div className="cta-content">
