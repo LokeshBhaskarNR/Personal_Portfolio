@@ -33,7 +33,7 @@ const Footer = () => {
           <Button
             type="text"
             icon={<LinkedinOutlined />}
-            href="'https://www.linkedin.com/in/lokesh-bhaskar-4113ab2a4/'"
+            href="https://www.linkedin.com/in/lokesh-bhaskar-4113ab2a4/"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
