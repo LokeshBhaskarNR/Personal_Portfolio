@@ -35,7 +35,7 @@ A modern, responsive portfolio website built with React showcasing professional 
 - **Achievement Cards**: Highlighting key accomplishments
 - **Responsive Grid Layout**: Optimized content presentation
 
-### 💼 **Projects Portfolio**
+###  **Projects Portfolio**
 - **Project Gallery**: Comprehensive showcase of work and projects
 - **Advanced Filtering**: Filter by category, technology, or search terms
 - **Technology Tags**: Visual indicators for tech stack used
@@ -44,7 +44,7 @@ A modern, responsive portfolio website built with React showcasing professional 
 - **Featured Projects**: Highlighted showcase of best work
 - **Responsive Cards**: Adaptive layout for all screen sizes
 
-### 📞 **Contact System**
+###  **Contact System**
 - **Contact Form**: Fully functional form with comprehensive validation
 - **Real-time Validation**: Instant feedback on form inputs
 - **Multiple Contact Methods**: Email, phone, and location information
@@ -52,7 +52,7 @@ A modern, responsive portfolio website built with React showcasing professional 
 - **Success/Error Handling**: User feedback for form submissions
 - **Availability Status**: Current availability for work opportunities
 
-### 🎯 **Technical Features**
+###  **Technical Features**
 - **Context API State Management**: Efficient theme and state management
 - **Local Storage Integration**: Persistent user preferences
 - **Error Handling**: Comprehensive error boundaries and validation
@@ -60,7 +60,7 @@ A modern, responsive portfolio website built with React showcasing professional 
 - **Performance Optimized**: Code splitting and optimized bundle size
 - **Accessibility**: WCAG compliant with keyboard navigation support
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 ### **Frontend Framework**
 - **React 19**: Latest React with hooks and modern patterns
