@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Button, Typography, Space, Image } from 'antd';
+import { Row, Col, Button, Typography, Image } from 'antd';
 import { Link } from 'react-router-dom';
 import { 
   DownloadOutlined, 
@@ -46,18 +46,19 @@ const Home = () => {
                 and exploring the latest in machine learning. 
                 Let's create something amazing together!
               </Paragraph>
+
+              <div className="resume-actions">
               
-              <Space size="large" className="hero-actions">
                 <Button 
-                  type="primary" 
                   size="large" 
                   icon={<EyeOutlined />}
+                  className="secondary-btn resume-download-btn"
+                  block
                 >
                   <Link to="/projects">View My Work</Link>
                 </Button>
-              </Space>
               
-              <div className="resume-actions">
+              
                 <Button 
                   size="large" 
                   icon={<DownloadOutlined />}
