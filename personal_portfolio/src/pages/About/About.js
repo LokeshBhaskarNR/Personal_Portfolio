@@ -102,23 +102,21 @@ const About = () => {
         </Row>
       </section>
 
-      <section className="experience-section">
-        <Title level={2} className="section-title">Experience</Title>
-        <Timeline
-          mode="alternate"
-          items={experience.map((exp, index) => ({
-            dot: <StarOutlined style={{ fontSize: '16px' }} />,
-            children: (
-              <Card className="experience-card">
-                <div className="experience-year">{exp.year}</div>
-                <Title level={4}>{exp.title}</Title>
-                <Paragraph className="company">{exp.company}</Paragraph>
-                <Paragraph>{exp.description}</Paragraph>
-              </Card>
-            ),
-          }))}
-        />
-      </section>
+    <section className="experience-section">
+      <Title level={2} className="section-title">Experience</Title>
+
+      <div className="experience-list">
+        {experience.map((exp, index) => (
+          <Card key={index} className="experience-card">
+            <div className="experience-year">{exp.year}</div>
+            <Title level={4}>{exp.title}</Title>
+            <Paragraph className="company">{exp.company}</Paragraph>
+            <Paragraph>{exp.description}</Paragraph>
+          </Card>
+        ))}
+      </div>
+    </section>
+
 
       <section className="achievements-section">
         <Title level={2} className="section-title">Achievements</Title>
@@ -143,7 +141,7 @@ const About = () => {
               
               <TrophyOutlined className="achievement-icon" />
               <Title level={4}>Coding Competitions</Title>
-              <Paragraph>Won in 2 coding contests feaaturing DSA skills</Paragraph>
+              <Paragraph>Won in 2 coding contests featuring DSA skills</Paragraph>
             </Card>
           </Col>
         </Row>
