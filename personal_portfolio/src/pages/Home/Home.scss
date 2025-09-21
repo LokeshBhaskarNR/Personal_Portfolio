@@ -60,6 +60,8 @@
       }
       
       .hero-actions {
+        margin-bottom: $spacing-md;
+        
         .ant-btn {
           height: 48px;
           padding: 0 $spacing-lg;
@@ -74,13 +76,60 @@
           }
         }
         
-        .secondary-btn {
+        @include respond-to(xs) {
+          justify-content: center;
+          
+          .ant-btn {
+            width: 100%;
+            max-width: 280px;
+          }
+        }
+      }
+      
+      .resume-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $spacing-sm;
+        
+        @include respond-to(xs) {
+          align-items: center;
+          text-align: center;
+        }
+        
+        .resume-download-btn {
+          height: 44px;
+          padding: 0 $spacing-lg;
+          font-size: $font-size-base;
+          font-weight: $font-weight-medium;
+          border-radius: $border-radius-lg;
           border: 2px solid $primary-color;
           color: $primary-color;
+          @include button-hover;
           
           &:hover {
             background: $primary-color;
             color: white;
+          }
+          
+          @include respond-to(xs) {
+            width: 100%;
+            max-width: 280px;
+          }
+        }
+        
+        .view-resume-link {
+          color: var(--text-color);
+          opacity: 0.8;
+          font-size: $font-size-sm;
+          
+          &:hover {
+            color: $primary-color;
+            opacity: 1;
+          }
+          
+          @include respond-to(xs) {
+            font-size: $font-size-base;
           }
         }
       }
