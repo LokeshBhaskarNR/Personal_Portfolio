@@ -2,8 +2,6 @@
 
 A modern, responsive portfolio website built with React showcasing professional experience, projects, and skills. Features a sleek dark/light mode toggle, interactive project gallery, and comprehensive contact system.
 
-![Portfolio Preview](https://via.placeholder.com/800x400/1890ff/white?text=Portfolio+Screenshot)
-
 ## Live Demo
 
 🌐 **Live Site**: [https://lokesh-b-personal-portfolio.vercel.app/](https://lokesh-b-personal-portfolio.vercel.app/)
