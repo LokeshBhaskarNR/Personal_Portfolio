@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.main-layout {
+  min-height: 100vh;
+  
+  .main-content {
+    padding: 0;
+    min-height: calc(100vh - 128px);
+    background: var(--bg-color);
+  }
+}

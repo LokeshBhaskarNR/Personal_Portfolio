@@ -1,0 +1,182 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.projects-page {
+  .projects-header {
+    padding: $spacing-xl $spacing-md $spacing-lg;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    
+    h1 {
+      color: var(--text-color);
+      margin-bottom: $spacing-md;
+      font-size: 2.5rem;
+      
+      @include respond-to(xs) {
+        font-size: 2rem;
+      }
+    }
+    
+    .projects-description {
+      color: var(--text-color);
+      opacity: 0.8;
+      font-size: $font-size-lg;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+  
+  .projects-filters {
+    padding: 0 $spacing-md $spacing-lg;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    .ant-input-affix-wrapper {
+      border-radius: $border-radius-lg;
+      
+      .ant-input {
+        font-size: $font-size-base;
+      }
+    }
+    
+    .ant-select {
+      .ant-select-selector {
+        border-radius: $border-radius-lg;
+        height: 40px;
+        
+        .ant-select-selection-item {
+          line-height: 38px;
+        }
+      }
+    }
+  }
+  
+  .featured-projects,
+  .all-projects {
+    padding: 0 $spacing-md $spacing-xl;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    h2 {
+      color: var(--text-color);
+      margin-bottom: $spacing-lg;
+      font-size: 1.8rem;
+      position: relative;
+      padding-bottom: $spacing-sm;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(45deg, $primary-color, $secondary-color);
+        border-radius: 2px;
+      }
+    }
+  }
+  
+  .project-card {
+    height: 100%;
+    @include card-style;
+    overflow: hidden;
+    
+    &.featured {
+      border: 2px solid $primary-color;
+      
+      &::before {
+        content: 'Featured';
+        position: absolute;
+        top: $spacing-sm;
+        right: $spacing-sm;
+        background: $primary-color;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: $font-weight-medium;
+        z-index: 1;
+      }
+    }
+    
+    .project-image {
+      height: 200px;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+    
+    &:hover .project-image {
+      transform: scale(1.05);
+    }
+    
+    .ant-card-body {
+      padding: $spacing-md;
+      
+      .ant-card-meta-title {
+        color: var(--text-color);
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-sm;
+      }
+      
+      .ant-card-meta-description {
+        color: var(--text-color);
+        opacity: 0.8;
+        line-height: 1.6;
+        margin-bottom: $spacing-md;
+        @include text-truncate-multiline(3);
+      }
+      
+      .project-technologies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: $spacing-sm;
+        
+        .ant-tag {
+          margin: 0;
+          border-radius: 12px;
+          font-size: 11px;
+          padding: 2px 8px;
+        }
+      }
+    }
+    
+    .ant-card-actions {
+      background: var(--card-bg);
+      border-top: 1px solid var(--border-color);
+      
+      .ant-btn {
+        border: none;
+        background: transparent;
+        color: var(--text-color);
+        font-weight: $font-weight-medium;
+        @include button-hover;
+        
+        &:hover {
+          color: $primary-color;
+          background: rgba(24, 144, 255, 0.1);
+        }
+      }
+    }
+  }
+  
+  .no-projects {
+    text-align: center;
+    padding: $spacing-xl;
+    
+    h4 {
+      color: var(--text-color);
+      margin-bottom: $spacing-sm;
+    }
+    
+    p {
+      color: var(--text-color);
+      opacity: 0.6;
+      margin: 0;
+    }
+  }
+}

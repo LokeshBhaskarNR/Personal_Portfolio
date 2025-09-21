@@ -1,0 +1,92 @@
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: #{$breakpoint-xs - 1px}) { @content; }
+  }
+  @if $breakpoint == sm {
+    @media (min-width: #{$breakpoint-sm}) { @content; }
+  }
+  @if $breakpoint == md {
+    @media (min-width: #{$breakpoint-md}) { @content; }
+  }
+  @if $breakpoint == lg {
+    @media (min-width: #{$breakpoint-lg}) { @content; }
+  }
+  @if $breakpoint == xl {
+    @media (min-width: #{$breakpoint-xl}) { @content; }
+  }
+}
+
+// Flexbox mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Card style mixin
+@mixin card-style {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: $border-radius-lg;
+  box-shadow: $box-shadow-light;
+  padding: $spacing-md;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: $box-shadow-base;
+    transform: translateY(-2px);
+  }
+}
+
+// Button hover effect
+@mixin button-hover {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-base;
+  }
+}
+
+// Text truncation
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Multi-line text truncation
+@mixin text-truncate-multiline($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Gradient background
+@mixin gradient-bg($color1, $color2, $direction: 45deg) {
+  background: linear-gradient($direction, $color1, $color2);
+}
+
+// Animation mixin
+@mixin animate($name, $duration: 0.3s, $timing: ease) {
+  animation: $name $duration $timing;
+}
+
+// Focus styles
+@mixin focus-visible {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}

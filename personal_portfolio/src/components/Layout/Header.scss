@@ -1,0 +1,181 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: $z-index-sticky;
+  box-shadow: $box-shadow-light;
+  
+  // Force header to always use black background
+  background-color: #000000 !important;
+  border-bottom: 1px solid #333333 !important;
+  
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    @include flex-between;
+    
+    .logo {
+      h2 {
+        margin: 0;
+        color: #1890ff !important; // Logo stays blue for branding
+        font-weight: $font-weight-bold;
+        
+        a {
+          color: #1890ff !important; // Logo stays blue
+          text-decoration: none;
+          
+          &:hover {
+            color: #40a9ff !important; // Lighter blue on hover
+          }
+        }
+      }
+    }
+    
+    .desktop-menu {
+      @include flex-center;
+      gap: $spacing-md;
+      
+      @include respond-to(xs) {
+        display: none;
+      }
+      
+      .main-menu {
+        border: none;
+        background: transparent !important;
+        
+        // Force all menu items to white text on black background
+        .ant-menu-item {
+          color: #ffffff !important;
+          background-color: transparent !important;
+          
+          &::after {
+            border-bottom: 2px solid #1890ff !important;
+          }
+          
+          a {
+            color: #ffffff !important; // White text
+            font-weight: $font-weight-medium;
+            
+            &:hover {
+              color: #1890ff !important; // Blue on hover
+            }
+          }
+          
+          &:hover {
+            color: #1890ff !important;
+            background-color: rgba(24, 144, 255, 0.1) !important;
+          }
+          
+          &.ant-menu-item-selected {
+            color: #1890ff !important;
+            background-color: rgba(24, 144, 255, 0.15) !important;
+            
+            a {
+              color: #1890ff !important;
+            }
+          }
+        }
+      }
+      
+      .theme-toggle {
+        font-size: 18px;
+        color: #ffffff !important; // White icon
+        background-color: transparent !important;
+        border: 1px solid #555555 !important;
+        @include button-hover;
+        
+        &:hover,
+        &:focus {
+          color: #1890ff !important;
+          background-color: rgba(24, 144, 255, 0.1) !important;
+          border-color: #1890ff !important;
+        }
+      }
+    }
+    
+    .mobile-menu {
+      @include flex-center;
+      gap: $spacing-sm;
+      
+      @include respond-to(sm) {
+        display: none;
+      }
+      
+      .theme-toggle,
+      .menu-toggle {
+        font-size: 18px;
+        color: #ffffff !important; // White icons
+        background-color: transparent !important;
+        border: 1px solid #555555 !important;
+        
+        &:hover,
+        &:focus {
+          color: #1890ff !important;
+          background-color: rgba(24, 144, 255, 0.1) !important;
+          border-color: #1890ff !important;
+        }
+      }
+    }
+  }
+}
+
+// Force mobile drawer to also stay black with white text
+.mobile-drawer {
+  .ant-drawer-header {
+    background-color: #000000 !important;
+    border-bottom: 1px solid #333333 !important;
+    
+    .ant-drawer-title {
+      color: #ffffff !important;
+    }
+    
+    .ant-drawer-close {
+      color: #ffffff !important;
+      
+      &:hover {
+        color: #1890ff !important;
+        background-color: rgba(24, 144, 255, 0.1) !important;
+      }
+    }
+  }
+  
+  .ant-drawer-body {
+    padding: 0;
+    background-color: #000000 !important;
+  }
+  
+  .ant-menu {
+    border: none;
+    background-color: #000000 !important;
+    
+    .ant-menu-item {
+      color: #ffffff !important;
+      
+      a {
+        color: #ffffff !important;
+        font-weight: $font-weight-medium;
+      }
+      
+      &:hover {
+        color: #1890ff !important;
+        background-color: rgba(24, 144, 255, 0.1) !important;
+        
+        a {
+          color: #1890ff !important;
+        }
+      }
+      
+      &.ant-menu-item-selected {
+        color: #1890ff !important;
+        background-color: rgba(24, 144, 255, 0.15) !important;
+        
+        a {
+          color: #1890ff !important;
+        }
+      }
+    }
+  }
+}

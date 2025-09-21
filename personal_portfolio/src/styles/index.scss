@@ -1,0 +1,263 @@
+// Import Ant Design styles
+@import '~antd/dist/reset.css';
+
+// Import custom variables and mixins
+@import 'variables';
+@import 'mixins';
+
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+#root {
+  height: 100%;
+}
+
+// Theme classes
+.light-theme {
+  background-color: $light-bg;
+  color: $light-text;
+}
+
+.dark-theme {
+  background-color: $dark-bg;
+  color: $dark-text;
+}
+
+// ==============================================
+// THEME-FIXED CLASSES - Elements that don't change with theme
+// ==============================================
+
+// Force elements to always use light theme colors
+.theme-fixed-light {
+  background-color: #ffffff !important;
+  color: #000000d9 !important;
+  border-color: #d9d9d9 !important;
+  
+  // Apply to all child elements
+  *,
+  *::before,
+  *::after {
+    color: #000000d9 !important;
+  }
+  
+  // Force Ant Design components
+  .ant-menu {
+    background-color: #ffffff !important;
+    color: #000000d9 !important;
+    
+    .ant-menu-item {
+      color: #000000d9 !important;
+      
+      a {
+        color: #000000d9 !important;
+      }
+      
+      &:hover {
+        color: #1890ff !important;
+        background-color: rgba(24, 144, 255, 0.06) !important;
+        
+        a {
+          color: #1890ff !important;
+        }
+      }
+      
+      &.ant-menu-item-selected {
+        color: #1890ff !important;
+        background-color: rgba(24, 144, 255, 0.1) !important;
+        
+        a {
+          color: #1890ff !important;
+        }
+      }
+    }
+  }
+  
+  .ant-btn {
+    color: #000000d9 !important;
+    background-color: transparent !important;
+    border-color: #d9d9d9 !important;
+    
+    &:hover,
+    &:focus {
+      color: #1890ff !important;
+      background-color: rgba(24, 144, 255, 0.06) !important;
+      border-color: #1890ff !important;
+    }
+  }
+  
+  .ant-drawer {
+    .ant-drawer-header {
+      background-color: #ffffff !important;
+      border-bottom-color: #f0f0f0 !important;
+      
+      .ant-drawer-title {
+        color: #000000d9 !important;
+      }
+      
+      .ant-drawer-close {
+        color: #000000d9 !important;
+        
+        &:hover {
+          color: #1890ff !important;
+          background-color: rgba(24, 144, 255, 0.06) !important;
+        }
+      }
+    }
+    
+    .ant-drawer-body {
+      background-color: #ffffff !important;
+    }
+  }
+}
+
+// Force elements to always use black background with white text
+.theme-fixed-black {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #333333 !important;
+  
+  // Apply to all child elements
+  *,
+  *::before,
+  *::after {
+    color: #ffffff !important;
+  }
+  
+  // Force Ant Design components
+  .ant-menu {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    
+    .ant-menu-item {
+      color: #ffffff !important;
+      
+      a {
+        color: #ffffff !important;
+      }
+      
+      &:hover {
+        color: #1890ff !important;
+        background-color: rgba(24, 144, 255, 0.1) !important;
+        
+        a {
+          color: #1890ff !important;
+        }
+      }
+      
+      &.ant-menu-item-selected {
+        color: #1890ff !important;
+        background-color: rgba(24, 144, 255, 0.15) !important;
+        
+        a {
+          color: #1890ff !important;
+        }
+      }
+    }
+  }
+  
+  .ant-btn {
+    color: #ffffff !important;
+    background-color: transparent !important;
+    border-color: #555555 !important;
+    
+    &:hover,
+    &:focus {
+      color: #1890ff !important;
+      background-color: rgba(24, 144, 255, 0.1) !important;
+      border-color: #1890ff !important;
+    }
+  }
+  
+  .ant-drawer {
+    .ant-drawer-header {
+      background-color: #000000 !important;
+      border-bottom-color: #333333 !important;
+      
+      .ant-drawer-title {
+        color: #ffffff !important;
+      }
+      
+      .ant-drawer-close {
+        color: #ffffff !important;
+        
+        &:hover {
+          color: #1890ff !important;
+          background-color: rgba(24, 144, 255, 0.1) !important;
+        }
+      }
+    }
+    
+    .ant-drawer-body {
+      background-color: #000000 !important;
+    }
+  }
+}
+
+// Common animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Utility classes
+.text-center {
+  text-align: center;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

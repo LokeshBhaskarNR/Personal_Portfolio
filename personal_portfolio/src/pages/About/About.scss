@@ -1,0 +1,187 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.about-page {
+  .about-hero {
+    padding: $spacing-xl $spacing-md;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    .about-image {
+      border-radius: $border-radius-lg;
+      box-shadow: $box-shadow-base;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: $box-shadow-dark;
+      }
+    }
+    
+    .about-content {
+      h1 {
+        color: var(--text-color);
+        margin-bottom: $spacing-md;
+        font-size: 2.5rem;
+        
+        @include respond-to(xs) {
+          font-size: 2rem;
+        }
+      }
+      
+      .intro-text {
+        font-size: $font-size-lg;
+        color: $primary-color;
+        font-weight: $font-weight-medium;
+        margin-bottom: $spacing-md;
+        line-height: 1.6;
+      }
+      
+      p {
+        color: var(--text-color);
+        opacity: 0.9;
+        line-height: 1.7;
+        margin-bottom: $spacing-md;
+        font-size: $font-size-base;
+      }
+    }
+  }
+  
+  .section-title {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: $spacing-xl;
+    font-size: 2rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(45deg, $primary-color, $secondary-color);
+      border-radius: 2px;
+    }
+  }
+  
+  .skills-section {
+    padding: $spacing-xl $spacing-md;
+    background: var(--card-bg);
+    
+    .skill-card {
+      @include card-style;
+      height: 100%;
+      
+      .skill-info {
+        @include flex-between;
+        margin-bottom: $spacing-sm;
+        
+        .skill-name {
+          color: var(--text-color);
+          font-weight: $font-weight-medium;
+        }
+        
+        .skill-percent {
+          color: $primary-color;
+          font-weight: $font-weight-semibold;
+          font-size: $font-size-sm;
+        }
+      }
+      
+      .ant-progress {
+        .ant-progress-bg {
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+  
+  .experience-section {
+    padding: $spacing-xl $spacing-md;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    .ant-timeline {
+      padding-top: $spacing-md;
+      
+      .ant-timeline-item-dot {
+        background: $primary-color;
+        border-color: $primary-color;
+        width: 12px;
+        height: 12px;
+        
+        .anticon {
+          color: white;
+          font-size: 16px;
+        }
+      }
+      
+      .experience-card {
+        @include card-style;
+        margin-bottom: $spacing-md;
+        
+        .experience-year {
+          color: $primary-color;
+          font-weight: $font-weight-bold;
+          font-size: $font-size-lg;
+          margin-bottom: $spacing-xs;
+        }
+        
+        h4 {
+          color: var(--text-color);
+          margin-bottom: $spacing-xs;
+        }
+        
+        .company {
+          color: $accent-color;
+          font-weight: $font-weight-medium;
+          margin-bottom: $spacing-sm;
+        }
+        
+        p {
+          color: var(--text-color);
+          opacity: 0.8;
+          margin: 0;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+  
+  .achievements-section {
+    padding: $spacing-xl $spacing-md;
+    background: var(--card-bg);
+    
+    .achievement-card {
+      @include card-style;
+      text-align: center;
+      height: 100%;
+      
+      .achievement-icon {
+        font-size: 3rem;
+        color: $primary-color;
+        margin-bottom: $spacing-md;
+        transition: all 0.3s ease;
+      }
+      
+      &:hover .achievement-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+      
+      h4 {
+        color: var(--text-color);
+        margin-bottom: $spacing-sm;
+      }
+      
+      p {
+        color: var(--text-color);
+        opacity: 0.8;
+        margin: 0;
+        line-height: 1.6;
+      }
+    }
+  }
+}

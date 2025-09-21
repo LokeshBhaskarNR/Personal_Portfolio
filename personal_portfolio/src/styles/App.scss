@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'mixins';
+
+.app {
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  
+  &.light {
+    --bg-color: #{$light-bg};
+    --text-color: #{$light-text};
+    --card-bg: #{$light-bg};
+    --border-color: #{$light-border};
+  }
+  
+  &.dark {
+    --bg-color: #{$dark-bg};
+    --text-color: #{$dark-text};
+    --card-bg: #{$dark-bg-secondary};
+    --border-color: #{$dark-border};
+  }
+}

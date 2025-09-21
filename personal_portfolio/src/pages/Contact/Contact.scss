@@ -1,0 +1,181 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.contact-page {
+  padding: $spacing-xl $spacing-md;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  .contact-header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    
+    h1 {
+      color: var(--text-color);
+      margin-bottom: $spacing-md;
+      font-size: 2.5rem;
+      
+      @include respond-to(xs) {
+        font-size: 2rem;
+      }
+    }
+    
+    .contact-description {
+      color: var(--text-color);
+      opacity: 0.8;
+      font-size: $font-size-lg;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+  
+  .contact-form-card {
+    @include card-style;
+    
+    h3 {
+      color: var(--text-color);
+      margin-bottom: $spacing-lg;
+      font-size: 1.5rem;
+    }
+    
+    .ant-form {
+      .ant-form-item-label > label {
+        color: var(--text-color);
+        font-weight: $font-weight-medium;
+      }
+      
+      .ant-input,
+      .ant-input:focus,
+      .ant-input-focused {
+        border-radius: $border-radius-lg;
+        border-color: var(--border-color);
+        background: var(--card-bg);
+        color: var(--text-color);
+        
+        &:hover {
+          border-color: $primary-color;
+        }
+        
+        &:focus {
+          border-color: $primary-color;
+          box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+        }
+      }
+      
+      .ant-input::placeholder {
+        color: var(--text-color);
+        opacity: 0.5;
+      }
+      
+      .submit-button {
+        width: 100%;
+        height: 48px;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-medium;
+        border-radius: $border-radius-lg;
+        @include button-hover;
+      }
+    }
+  }
+  
+  .contact-info {
+    .contact-info-card,
+    .social-links-card,
+    .availability-card {
+      @include card-style;
+      margin-bottom: $spacing-md;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      h3, h4 {
+        color: var(--text-color);
+        margin-bottom: $spacing-md;
+      }
+    }
+    
+    .contact-info-item {
+      @include flex-center;
+      align-items: flex-start;
+      margin-bottom: $spacing-lg;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      .contact-icon {
+        font-size: 20px;
+        color: $primary-color;
+        margin-right: $spacing-md;
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+      
+      .contact-details {
+        flex: 1;
+        
+        .contact-label {
+          color: var(--text-color);
+          font-weight: $font-weight-medium;
+          margin-bottom: 4px;
+          font-size: $font-size-sm;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          opacity: 0.7;
+        }
+        
+        .contact-value {
+          color: var(--text-color);
+          font-size: $font-size-base;
+          
+          &:hover {
+            color: $primary-color;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    
+    .social-button {
+      font-size: 24px;
+      width: 48px;
+      height: 48px;
+      @include flex-center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: $primary-color;
+        background: rgba(24, 144, 255, 0.1);
+        transform: translateY(-2px);
+      }
+    }
+    
+    .availability-card {
+      p {
+        color: var(--text-color);
+        opacity: 0.9;
+        line-height: 1.6;
+        margin: 0;
+        
+        .status {
+          font-weight: $font-weight-semibold;
+          
+          &.available {
+            color: $secondary-color;
+          }
+          
+          &.busy {
+            color: $accent-color;
+          }
+          
+          &.unavailable {
+            color: $danger-color;
+          }
+        }
+      }
+    }
+  }
+}
