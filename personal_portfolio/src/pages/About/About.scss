@@ -99,10 +99,15 @@
     }
   }
   
+  .education-section,
   .experience-section {
     padding: $spacing-xl $spacing-md;
     max-width: 1200px;
     margin: 0 auto;
+    
+    &.education-section {
+      background: var(--card-bg);
+    }
     
     .ant-timeline {
       padding-top: $spacing-md;
@@ -119,9 +124,38 @@
         }
       }
       
+      .education-card,
       .experience-card {
         @include card-style;
         margin-bottom: $spacing-md;
+        
+        .education-header {
+          @include flex-between;
+          margin-bottom: $spacing-sm;
+          flex-wrap: wrap;
+          gap: $spacing-xs;
+          
+          .education-year {
+            color: $primary-color;
+            font-weight: $font-weight-bold;
+            font-size: $font-size-base;
+            @include flex-center;
+            gap: 6px;
+            
+            .anticon {
+              font-size: 14px;
+            }
+          }
+          
+          .education-grade {
+            color: $secondary-color;
+            font-weight: $font-weight-semibold;
+            font-size: $font-size-sm;
+            background: rgba(82, 196, 26, 0.1);
+            padding: 2px 8px;
+            border-radius: 12px;
+          }
+        }
         
         .experience-year {
           color: $primary-color;
@@ -133,12 +167,30 @@
         h4 {
           color: var(--text-color);
           margin-bottom: $spacing-xs;
+          font-size: $font-size-lg;
         }
         
-        .company {
+        .education-field {
+          color: $accent-color;
+          font-weight: $font-weight-medium;
+          margin-bottom: $spacing-xs;
+          font-style: italic;
+        }
+        
+        .company,
+        .institution {
           color: $accent-color;
           font-weight: $font-weight-medium;
           margin-bottom: $spacing-sm;
+          
+          &::before {
+            content: '🏢 ';
+            margin-right: 4px;
+          }
+        }
+        
+        .institution::before {
+          content: '🎓 ';
         }
         
         p {
@@ -146,6 +198,21 @@
           opacity: 0.8;
           margin: 0;
           line-height: 1.6;
+          
+          &.education-description {
+            margin-top: $spacing-xs;
+            font-size: $font-size-sm;
+            opacity: 0.9;
+          }
+        }
+      }
+      
+      // Responsive timeline for mobile
+      @include respond-to(xs) {
+        .ant-timeline-item {
+          &:nth-child(even) {
+            text-align: left;
+          }
         }
       }
     }

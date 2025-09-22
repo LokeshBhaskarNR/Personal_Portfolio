@@ -1,11 +1,10 @@
 import React from 'react';
-import { Row, Col, Typography, Card, Progress, Image, Timeline } from 'antd';
+import { Row, Col, Typography, Card, Progress, Image } from 'antd';
 import { 
   TrophyOutlined, 
   BookOutlined, 
   RocketOutlined,
-  StarOutlined 
-} from '@ant-design/icons';
+  } from '@ant-design/icons';
 import './About.scss';
 
 const { Title, Paragraph } = Typography;
@@ -43,6 +42,25 @@ const About = () => {
     }
   ];
 
+      const education = [
+    {
+      degree: 'Bachelor of Engineering (BE)',
+      field: 'Computer Science & Engineering',
+      institution: 'SJB Institute of Technology, Bangalore',
+      year: '2021 - 2025',
+      grade: 'CGPA: 9.1/10',
+    },
+    {
+      degree: 'Higher Secondary Education (PUC)',
+      field: 'Science (PCMB)',
+      institution: 'Mahesh PU College, Bangalore',
+      year: '2019 - 2021',
+      grade: 'Percentage: 89%',
+    }
+
+  ];
+
+
   return (
     <div className="about-page">
       <section className="about-hero">
@@ -75,6 +93,23 @@ const About = () => {
               </Paragraph>
             </div>
           </Col>
+        </Row>
+      </section>
+
+      <section className="education-section">
+        <Title level={2} className="section-title">Education</Title>
+        <Row gutter={[24, 24]}>
+          {education.map((edu, index) => (
+            <Col xs={24} md={8} key={index}>
+              <Card className="education-card">
+                <Title level={4}>{edu.degree}</Title>
+                <Paragraph className="education-field">{edu.field}</Paragraph>
+                <Paragraph className="institution">{edu.institution}</Paragraph>
+                <Paragraph className="education-year">{edu.year}</Paragraph>
+                <Paragraph className="education-grade">{edu.grade}</Paragraph>
+              </Card>
+            </Col>
+          ))}
         </Row>
       </section>
 
