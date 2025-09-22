@@ -60,7 +60,6 @@ const About = () => {
 
   ];
 
-
   return (
     <div className="about-page">
       <section className="about-hero">
